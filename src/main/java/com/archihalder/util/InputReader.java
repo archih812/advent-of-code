@@ -11,10 +11,9 @@ public final class InputReader {
     private InputReader() {
     }
 
-    public static List<String> readLines(String year, String day, boolean useSampleInput) {
-        String rootInputFilePath = "src/main/resources/";
+    public static List<String> readLines(int year, int day, boolean useSampleInput) {
         String typeOfInput = useSampleInput ? "sample-inputs/" : "inputs/";
-        String filePath = rootInputFilePath + typeOfInput + year + "/day" + day + "-input.txt";
+        String filePath = String.format("src/main/resources/%s/%d/day%02d-input.txt", typeOfInput, year, day);
         try {
             return Files.readAllLines(Path.of(filePath));
         } catch (IOException e) {
