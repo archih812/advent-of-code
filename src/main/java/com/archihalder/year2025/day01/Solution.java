@@ -16,8 +16,8 @@ public class Solution {
 
     public static List<int[]> parseInput(String filePath) {
         List<int[]> lines = new ArrayList<>();
-        String line = null;
-        int direction = 0, rotation = 0;
+        String line;
+        int direction, rotation;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             while ((line = br.readLine()) != null) {
                 line = line.strip();
@@ -43,8 +43,8 @@ public class Solution {
 
     public static int part2(List<int[]> lines) {
         int point = 50;
-        int value = 0, zeroPassed = 0;
-        int direction = 0, rotation = 0;
+        int zeroPassed = 0;
+        int value, direction, rotation;
         for (int[] line : lines) {
             direction = line[0];
             rotation = line[1];
